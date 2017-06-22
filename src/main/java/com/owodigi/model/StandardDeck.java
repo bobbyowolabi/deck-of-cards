@@ -15,6 +15,6 @@ class StandardDeck implements Deck {
 
     @Override
     public Card dealOneCard() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return new Card();
     }
 }
