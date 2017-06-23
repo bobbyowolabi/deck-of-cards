@@ -12,7 +12,7 @@ class StandardDeck implements Deck {
 
     public StandardDeck() {
         for (int i = 0; i < 52; ++i) {
-            cards.add(i, new Card());
+            cards.add(i, new Card(null, null));
         }
     }
 
