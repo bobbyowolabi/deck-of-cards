@@ -17,8 +17,7 @@ class StandardDeck implements Deck {
     }
 
     @Override
-    public void shuffle() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void shuffle() {        
     }
 
     @Override
