@@ -20,11 +20,11 @@ class StandardDeck implements Deck {
 
     @Override
     public void shuffle() {
-        /*final long numberOfSwaps = Math.round(Math.random() * 1000);
+        final long numberOfSwaps = Math.round(Math.random() * 1000);
         final int maxIndex = cards.size() - 1;
         for (int i = 0; i < numberOfSwaps; ++i) {
             swap((int)Math.round(Math.random() * maxIndex), (int)Math.round(Math.random() * maxIndex));
-        }*/
+        }
     }
 
     private void swap(final int index1, final int index2) {
