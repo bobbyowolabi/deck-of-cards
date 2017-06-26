@@ -35,14 +35,7 @@ class StandardDeck implements Deck {
     }
     
     @Override
-    /* To Do: refactor to just be a one liner: return cards.isEmpty() ? null : cards.remove(0); */
     public Card dealOneCard() {
-        final Iterator<Card> iterator = cards.iterator();
-        if (iterator.hasNext()) {
-            final Card card = iterator.next();
-            iterator.remove();
-            return card;
-        }
-        return null;        
+        return cards.isEmpty() ? null : cards.remove(0);
     }
 }
