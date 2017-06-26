@@ -9,6 +9,12 @@ public class Card {
     private final Suit suit;
     private final FaceValue faceValue;
 
+    /**
+     * Returns a Card instance
+     * 
+     * @param suit
+     * @param faceValue 
+     */
     public Card(final Suit suit, final FaceValue faceValue) {
         this.suit = suit;
         this.faceValue = faceValue;
