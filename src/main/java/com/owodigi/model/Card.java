@@ -36,11 +36,21 @@ public class Card {
         }
         return this.faceValue == other.faceValue;
     }
-    
+
+    /**
+     * Returns the suit of this card.
+     * 
+     * @return the suit of this card.
+     */
     public Suit suit() {
         return suit;
     }
 
+    /**
+     * Returns the FaceValue of this card.
+     * 
+     * @return the FaceValue of this card.
+     */
     public FaceValue faceValue() {
         return faceValue;
     }

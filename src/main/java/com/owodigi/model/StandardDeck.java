@@ -3,10 +3,7 @@ package com.owodigi.model;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 
- */
-class StandardDeck implements Deck {
+public class StandardDeck implements Deck {
     private final List<Card> cards = new ArrayList<>();
 
     public StandardDeck() {
