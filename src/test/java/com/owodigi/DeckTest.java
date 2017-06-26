@@ -3,22 +3,24 @@ package com.owodigi;
 import com.owodigi.model.Card;
 import com.owodigi.model.Deck;
 import com.owodigi.model.DeckFactory;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class DeckTest {
 
-    private void assertNotEquals(final String message, final Card card1, final Card card2) {
-        Assert.assertNotEquals(message + ": Suit", card1.suit(), card2.suit());
-        Assert.assertNotEquals(message + ": Face Value", card1.faceValue(), card2.faceValue());
-    }
-    
     private void assertDistinct(final String message, final Deck deck1, final Deck deck2) {
-        Card deck1Card;
-        while ((deck1Card = deck1.dealOneCard()) != null) {
-            assertNotEquals(message, deck1Card, deck2.dealOneCard());
+        final List<Card> deck1List = new ArrayList<>();
+        for (int i = 0; i < 52; ++i) {
+            deck1List.add(i, deck1.dealOneCard());
         }
-        Assert.assertNull("Expected to reach end of deck", deck2.dealOneCard());        
+        final List<Card> deck2List = new ArrayList<>();
+        for (int i = 0; i < 52; ++i) {
+            deck2List.add(i, deck2.dealOneCard());
+        }
+        Assert.assertNull("Expected to reach end of deck", deck2.dealOneCard());
+        Assert.assertNotEquals(message, deck1List, deck2List);
     }
     
     @Test
@@ -42,6 +44,6 @@ public class DeckTest {
         deck1.shuffle();
         final Deck deck2 = DeckFactory.newInstance();
         deck2.shuffle();
-        assertDistinct("Expect reasonable shuffle implementation to not return the same deck consecutively", deck1, deck2);
+        assertDistinct("Expect reasonable shuffle implementation not to return the same deck consecutively", deck1, deck2);
     }
 }
