@@ -1,14 +1,13 @@
 package com.owodigi.model;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
- *
+ * 
  */
 class StandardDeck implements Deck {
-    private List<Card> cards = new ArrayList<>();
+    private final List<Card> cards = new ArrayList<>();
 
     public StandardDeck() {
         for (final Suit suit : Suit.values()) {

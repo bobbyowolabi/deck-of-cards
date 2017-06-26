@@ -11,16 +11,18 @@ import org.junit.Test;
 public class DeckTest {
 
     private void assertDistinct(final String message, final Deck deck1, final Deck deck2) {
-        final List<Card> deck1List = new ArrayList<>();
-        for (int i = 0; i < 52; ++i) {
-            deck1List.add(i, deck1.dealOneCard());
-        }
-        final List<Card> deck2List = new ArrayList<>();
-        for (int i = 0; i < 52; ++i) {
-            deck2List.add(i, deck2.dealOneCard());
-        }
+        final List<Card> deck1List = dealADeck(deck1);
+        final List<Card> deck2List = dealADeck(deck2);
         Assert.assertNull("Expected to reach end of deck", deck2.dealOneCard());
         Assert.assertNotEquals(message, deck1List, deck2List);
+    }
+    
+    private List<Card> dealADeck(final Deck deck) {
+        final List<Card> deckList = new ArrayList<>();
+        for (int i = 0; i < 52; ++i) {
+            deckList.add(i, deck.dealOneCard());
+        }
+        return deckList;
     }
     
     @Test
